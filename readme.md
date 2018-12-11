@@ -9,9 +9,10 @@ Just an extended Hello World example pure Android app that:
 - [ ] Auto publish to Play Store
 
 I make this to learn about Android release process and apply some best practice
-in Softwaren Engineering to this field. If you are a seasoned Android developer,
+in Software Engineering to this field. If you are a seasoned Android developer,
 there's nothing here for you. This may be helpful for someone who just finished
-some tutorials and want to learn the next steps.
+some tutorials and want to learn the next steps. Also helpful for anyone who get
+lost in ton of Google document pages.
 
 App is generated using Android Studio, with slightly modification, nothing
 interesting. The following content mainly about how to relase and setup CI/CD
@@ -20,7 +21,34 @@ behind all following commands, configs. This can help you get your hand dirty,
 but nothing can replace proper study. So, after having fun, please take your
 time read the linked documents.
 
-## Publish on Play Store
+## Note
+
+As the writing time, I'm using:
+
+- Android Studio 3.2.1
+
+## Sign the app
+
+- Debug build is auto signed via using `app/debug.keystore`.
+- Release key: on Android Studio, use **Build > Build > Generate Signed
+  Bundle/APK**. Follow [this](https://developer.android.com/studio/publish/app-signing#generate-key)
+  - Beware that if you don't specify full path for the release key locations, it
+    might be generated inside your Android Studion `/bin` folder. You can try to
+    open the form "Generate Signed Bundle/APK" and click "Choose existing..."
+    and, hopefully, it will show you the folder of your newly generated key.
+  - I'm using Google Play App Signing since I don't trust myself to manage
+    the release key. You may have other opinion given that [Google has the power
+    to compromise your app](https://stackoverflow.com/a/44647037/3869533)
+
+## Prepare app infomation on Google Play
+
+- Go to https://play.google.com/apps/publish (register and pay the fee if you
+  haven't)
+
+- Fill in the information in the "Store Listing" menu. For the privacy policy,
+  given that this app is open source, and I collect absolutely nothing, I use a
+  [generator](https://app-privacy-policy-generator.firebaseapp.com/) and
+  distribute it via Github using a permanent link.
 
 ## License
 
